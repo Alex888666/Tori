@@ -1,0 +1,17 @@
+close all
+clear
+clc
+
+bag = rosbag('Prueba3.bag');
+disp(bag.AvailableTopics(:,["NumMessages", "MessageType"]))
+lidarBagSel = select(bag,"Topic","/slamware_ros_sdk_server_node/map");
+lidarMsgs = readMessages(lidarBagSel,"DataFormat","struct");
+
+
+% pose = [5,5,0];
+% ranges = 3*ones(100,1);
+% angles = linspace(-pi/2,pi/2,100);
+% maxrange = 20;
+% scan = lidarScan(ranges,angles);
+
+
